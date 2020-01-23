@@ -9,11 +9,9 @@ import pandas as pd
 import numpy as np
 import sklearn as sk
 import seaborn as sns
-from pandas import Series
 import matplotlib.pylab as plt
 import matplotlib.pyplot as pyplt
 from sklearn import tree
-from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics 
 from sklearn.metrics import precision_score
