@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import sklearn as sk
 import seaborn as sns
-from pandas import Series
 import matplotlib.pylab as plt
 import matplotlib.pyplot as pyplt
 from sklearn import tree
@@ -66,7 +65,6 @@ print("--> Shape of Test Time-Series:", test_ts.shape)
 
 Train=train_ts
 Test = test_ts
-
 
 x_test = np.delete((Test), 18, 1) 
 y_test = Test [:,18]
