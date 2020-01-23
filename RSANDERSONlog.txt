@@ -1,0 +1,113 @@
+commit 7d36e77dc901f92f50953deeb2c5acd9005340f2
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Wed Jan 22 10:15:04 2020 +0000
+
+    SImplifying data install for reprodicible
+
+commit 699f3287043bf1033cabb3b9e7439540e412710d
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Mon Jan 20 10:16:46 2020 +0000
+
+    Updated models
+
+commit ddf0376fd1732b72aeeeea420a005e613139836e
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Thu Jan 16 18:26:14 2020 +0000
+
+    Updated codes: refining for testing different parameters
+
+commit df7299989f19230057309f88d7bc89447588bf94
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Wed Jan 15 08:43:57 2020 +0000
+
+    Developing Models
+
+commit 6d8baca0b189382aa1dbcd77a04f15ff6e2361fe
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Tue Jan 14 15:12:39 2020 +0000
+
+    CNN work
+
+commit 5466c288d2287cc632e01ac4ee737aa7e5195aef
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Tue Jan 14 11:28:56 2020 +0000
+
+    Developing evaluation
+
+commit 3a8eeb56f0933f18bea12f59ba510f5ea08fb0b7
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Tue Jan 14 09:53:54 2020 +0000
+
+    Description boxplot
+
+commit 19de8b6961f1ec61e2da1dffdca7be973498b271
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Tue Jan 14 09:53:32 2020 +0000
+
+    Written report set up
+
+commit 3ed8f2421b46406b882145038dc571c5efc17ce5
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Tue Jan 14 09:53:17 2020 +0000
+
+    CNN development
+
+commit dc76d894b4a1f42e75761c2259735003c45e2071
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Tue Jan 14 09:01:08 2020 +0000
+
+    Stats/graphs of sample
+
+commit 693dddc71ffcede70338b14b9d2fb057db01b315
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Mon Jan 13 21:41:05 2020 +0000
+
+    Downloading data/experiment
+
+commit b7e95ed5a76aa5a8bfaabd7097f8f9d9984271d2
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Mon Jan 13 15:39:00 2020 +0000
+
+    another commit
+
+commit 51e4703aa44eeef1a80d923911b2904eb6ab96b7
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Mon Jan 13 15:33:28 2020 +0000
+
+    testing
+
+commit 379328f05343766bd00654e52a508c404e20314f
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Mon Jan 13 14:15:36 2020 +0000
+
+    Update
+
+commit 7b15a79f1077014af17d901d59ff511214925043
+Author: RSanderson96 <b9054751@newcastle.ac.uk>
+Date:   Sun Jan 12 11:00:51 2020 +0000
+
+    Hello
+
+commit e03397014da1b3dbbcf88e2c4dc407d6b7ba91bc
+Author: Rachael Sanderson (PGR) <b9054751@newcastle.ac.uk>
+Date:   Sun Jan 12 10:43:30 2020 +0000
+
+    Github
+
+commit 353cab53583f48c4400135e29a0ef529081b411a
+Author: Rachael Sanderson (PGR) <b9054751@newcastle.ac.uk>
+Date:   Sun Jan 12 10:24:15 2020 +0000
+
+    Testing Commit
+
+commit 4f63ab759a8a88800d0b41b8b84e7babfbbef5b4
+Author: Rachael Sanderson (PGR) <b9054751@newcastle.ac.uk>
+Date:   Sun Jan 12 10:16:50 2020 +0000
+
+    Testing Github
+
+commit b90b94c9d3add9368b91856d6a5348821f8fd785
+Author: Rachael Sanderson (PGR) <b9054751@newcastle.ac.uk>
+Date:   Sun Jan 12 10:08:14 2020 +0000
+
+    Testing Github
