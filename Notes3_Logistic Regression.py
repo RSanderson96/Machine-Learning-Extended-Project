@@ -65,6 +65,37 @@ print("--> Shape of Training Time-Seires:", train_ts.shape)
 print("--> Shape of Test Time-Series:", test_ts.shape)
 
 
+TestDF = pd.DataFrame(train_ts)
+TrainDF = pd.DataFrame(test_ts)
+              
+lr = LogisticRegression() 
+features= range(0,17)
+x_test = TestDF[features]
+y_test = TestDF[18]
+x_train = TrainDF[features]
+y_train = TrainDF[18]
+
+
+lr.fit(x_train, y_train)
+
+Log_predictions = lr.predict(x_test)
+
+Y_Predictions = Log_predictions
+Y_True = y_test
+
+print("Accuracy:",metrics.accuracy_score(Y_True, Y_Predictions)) 
+print('Precision: %.3f' % precision_score(Y_True, Y_Predictions))  
+print('Recall: %.3f' % recall_score(Y_True, Y_Predictions)) 
+print('F1: %.3f' % f1_score(Y_True, Y_Predictions))
+
+
+#Form a confusion matrix from test data and preditions
+sns.heatmap(confusion_matrix(Y_True, Y_Predictions),annot=True, annot_kws={"size": 14},fmt='3.0f',cmap="RdBu_r")
+plt.title('Confusion Matrix: Logistic Regression', y=1.05, size=15)
+plt.ylabel('True label')
+plt.xlabel('Predicted label')
+
+#repeat for different columns
 
 Train = train_ts[train_ts[:,18]==1] #set out datasets (in this case, only standing)
 Test = test_ts[test_ts[:,17]==1] 
@@ -91,3 +122,4 @@ print("Accuracy:",metrics.accuracy_score(Y_True, Y_Predictions))
 print('Precision: %.3f' % precision_score(Y_True, Y_Predictions))  
 print('Recall: %.3f' % recall_score(Y_True, Y_Predictions)) 
 print('F1: %.3f' % f1_score(Y_True, Y_Predictions))
+
