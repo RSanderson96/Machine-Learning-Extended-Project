@@ -5,13 +5,10 @@ Created on Wed Jan 15 08:36:00 2020
 @author: b9054751
 """
 
-
 import pandas as pd
 import numpy as np
 import sklearn as sk
 import seaborn as sns
-from glob import glob
-from pandas import Series
 import matplotlib.pylab as plt
 import matplotlib.pyplot as pyplt
 from sklearn.neural_network import MLPClassifier
@@ -76,7 +73,7 @@ y_train = TrainDF[18]
 x_test = TestDF [features]
 y_test = TestDF[18]
 MLP = MLPClassifier(solver='lbfgs', alpha=1e-5,
-                    hidden_layer_sizes=(10, 10,10), random_state=1)
+                    hidden_layer_sizes=(2,5), random_state=1)
 
 MLP.fit(x_train, y_train)
 prediction = MLP.predict(x_test)
@@ -88,16 +85,41 @@ print('F1: %.3f' % f1_score(y_test, prediction)) #0.723
 
 sns.heatmap(confusion_matrix(y_test, prediction),annot=True, annot_kws={"size": 14},fmt='3.0f',cmap="RdBu_r")
 plt.title('MLP Confusion_matrix', y=1.05, size=15)
+plt.ylabel('True label')
+plt.xlabel('Predicted label')
 
-
-
-
-
-
-
-
+##################################
+#Activity split
 TrainDF = pd.DataFrame(train_ts[train_ts[:,12]==1])
 TestDF = pd.DataFrame(test_ts[test_ts[:,12]==1])
+
+features= range(0,18)
+x_train = TrainDF [features]
+y_train = TrainDF[18]
+x_test = TestDF [features]
+y_test = TestDF[18]
+MLP = MLPClassifier(solver='lbfgs', alpha=1e-5,
+                    hidden_layer_sizes=(2,5), random_state=1)
+
+MLP.fit(x_train, y_train)
+prediction = MLP.predict(x_test)
+
+print("Accuracy:",metrics.accuracy_score(y_test, prediction)) #0.63553
+print('Precision: %.3f' % precision_score(y_test, prediction)) #0.647 
+print('Recall: %.3f' % recall_score(y_test, prediction)) #0.819
+print('F1: %.3f' % f1_score(y_test, prediction)) #0.723
+
+sns.heatmap(confusion_matrix(y_test, prediction),annot=True, annot_kws={"size": 14},fmt='3.0f',cmap="RdBu_r")
+plt.title('MLP Confusion_matrix', y=1.05, size=15)
+plt.ylabel('True label')
+plt.xlabel('Predicted label')
+
+
+######################
+#Parameter experiment
+
+TrainDF = pd.DataFrame(train_ts)
+TestDF = pd.DataFrame(test_ts)
 
 
 features= range(0,18)
@@ -106,7 +128,7 @@ y_train = TrainDF[18]
 x_test = TestDF [features]
 y_test = TestDF[18]
 MLP = MLPClassifier(solver='lbfgs', alpha=1e-5,
-                    hidden_layer_sizes=(10, 10,10), random_state=1)
+                    hidden_layer_sizes=(10,10,10), random_state=1)
 
 MLP.fit(x_train, y_train)
 prediction = MLP.predict(x_test)
@@ -118,96 +140,7 @@ print('F1: %.3f' % f1_score(y_test, prediction)) #0.723
 
 sns.heatmap(confusion_matrix(y_test, prediction),annot=True, annot_kws={"size": 14},fmt='3.0f',cmap="RdBu_r")
 plt.title('MLP Confusion_matrix', y=1.05, size=15)
+plt.ylabel('True label')
+plt.xlabel('Predicted label')
 
-#
-#
-#
-#from sklearn.metrics import accuracy_score
-#from sklearn.metrics import precision_score
-#from sklearn.metrics import recall_score
-#from sklearn.metrics import f1_score
-#from sklearn.metrics import cohen_kappa_score
-#from sklearn.metrics import roc_auc_score
-#from sklearn.metrics import confusion_matrix
-#from keras.models import Sequential
-#from keras.layers import Dense
-#
-#TrainDF = pd.DataFrame(train_ts[train_ts[:,12]==1])
-#TestDF = pd.DataFrame(test_ts[test_ts[:,12]==1])
-#features= range(0,18)
-#x_train = TrainDF [features]
-#y_train = TrainDF[18]
-#x_test = TestDF [features]
-#y_test = TestDF[18]
-#
-#
-#model = Sequential()
-#model.add(Dense(100, input_dim=12, activation='relu'))
-#model.add(Dropout(0.5))
-#model.add(Dense(100, activation='relu'))
-#model.add(Dropout(0.5))
-#model.add(Dense(1, activation='sigmoid'))
-#model.compile(loss='binary_crossentropy',
-#              optimizer='rmsprop',
-#              metrics=['accuracy'])
-#_, train_acc = model.evaluate(x_train, y_train, verbose=1)
-#_, test_acc = model.evaluate(x_test, y_test, verbose=1)
-#
-#print('Train: %.3f, Test: %.3f' % (train_acc, test_acc))
-#
-##model.fit(x_train, y_train,
-##          epochs=20,
-##          batch_size=128)
-##predictions = model.predict(x_test)
-##score = model.evaluate(x_test, y_test, batch_size=128)
-#
-## plot loss during training
-#pyplot.subplot(211)
-#pyplot.title('Loss')
-#pyplot.plot(history.history['loss'], label='train')
-#pyplot.plot(history.history['val_loss'], label='test')
-#pyplot.legend()
-## plot accuracy during training
-#pyplot.subplot(212)
-#pyplot.title('Accuracy')
-#pyplot.plot(history.history['accuracy'], label='train')
-#pyplot.plot(history.history['val_accuracy'], label='test')
-#pyplot.legend()
-#pyplot.show()
-#
-#
-#model = Sequential()
-#model.add(Dense(100, input_dim=12, activation='relu'))
-#model.add(Dropout(0.5))
-#model.add(Dense(100, activation='relu'))
-#model.add(Dropout(0.5))
-#model.add(Dense(1, activation='sigmoid'))
-#model.compile(loss='binary_crossentropy',
-#              optimizer='rmsprop',
-#              metrics=['accuracy'])
-#model = model.fit(trainX, trainy, epochs=20, verbose=0)
-#
-#
-## predict probabilities for test set
-#yhat_probs = model.predict(testX, verbose=0)
-## predict crisp classes for test set
-#yhat_classes = model.predict_classes(testX, verbose=0)
-#
-## predict probabilities for test set
-#yhat_probs = model.predict(testX, verbose=0)
-#yhat_classes = model.predict_classes(testX, verbose=0)
-#yhat_probs = yhat_probs[:, 0]
-#yhat_classes = yhat_classes[:, 0]
-#
-## accuracy: (tp + tn) / (p + n)
-#accuracy = accuracy_score(testy, yhat_classes)
-#print('Accuracy: %f' % accuracy)
-## precision tp / (tp + fp)
-#precision = precision_score(testy, yhat_classes)
-#print('Precision: %f' % precision)
-## recall: tp / (tp + fn)
-#recall = recall_score(testy, yhat_classes)
-#print('Recall: %f' % recall)
-## f1: 2 tp / (2 tp + fp + fn)
-#f1 = f1_score(testy, yhat_classes)
-#print('F1 score: %f' % f1)
+
